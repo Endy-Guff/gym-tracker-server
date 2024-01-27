@@ -6,7 +6,7 @@ import GroupModel from "../models/group-model";
 class ExerciseService {
 
     async get() {
-        return ExerciseModel.find({});
+        return ExerciseModel.find({}).populate('group');
     }
 
     async create(name: string, groupId: string) {
