@@ -5,6 +5,7 @@ import * as mongoose from "mongoose";
 import bodyParser from "body-parser";
 import {groupRouter} from "./routers/group-router";
 import errorMiddleware from "./middlewares/error-middleware";
+import {exerciseRouter} from "./routers/exercise-router";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 app.use('/group', groupRouter)
+app.use('/exercise', exerciseRouter)
 
 
 app.get('/', (req: Request, res: Response) => {
