@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import {groupRouter} from "./routers/group-router";
 import errorMiddleware from "./middlewares/error-middleware";
 import {exerciseRouter} from "./routers/exercise-router";
+import {workoutRouter} from "./routers/workout-router";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(cors(corsOptions))
 
 app.use('/group', groupRouter)
 app.use('/exercise', exerciseRouter)
+app.use('/workout', workoutRouter)
 
 
 app.get('/', (req: Request, res: Response) => {

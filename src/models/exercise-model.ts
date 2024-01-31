@@ -6,4 +6,13 @@ const ExerciseSchema = new Schema({
     group: {type: Schema.Types.ObjectId, ref: 'Group'},
 })
 
+ExerciseSchema.set('toJSON', {
+    transform: (doc, ret) => {
+        ret.id = ret._id.toHexString();
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+    }
+});
+
 export default model('Exercise', ExerciseSchema)

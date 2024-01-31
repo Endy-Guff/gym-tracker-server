@@ -18,7 +18,7 @@ class ExerciseService {
         const exercise = await ExerciseModel.create({name, group: groupId})
         const group = await GroupModel.findById(exercise.group)
         return {
-            _id: exercise.id,
+            id: exercise.id,
             name: exercise.name,
             group
         }
